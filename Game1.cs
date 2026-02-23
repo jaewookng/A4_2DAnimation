@@ -91,7 +91,7 @@ public class Game1 : Game
         // construct the pendulumns, change scale etc as needed
         foxClock = new Pendulum(fox,
             stick,
-            new Vector2(GraphicsDevice.Viewport.Width / 6f - 200, GraphicsDevice.Viewport.Height / 4f),
+            Vector2.Zero,
             1.0f,
             1.3f,
             2,
@@ -99,7 +99,7 @@ public class Game1 : Game
             0.5f);
         birdClock = new Pendulum(bird,
             stick,
-            new Vector2(GraphicsDevice.Viewport.Width / 6f - 200, GraphicsDevice.Viewport.Height / 4f),
+            Vector2.Zero,
             1.0f,
             1.0f,
             2,
@@ -142,7 +142,7 @@ public class Game1 : Game
         
         //Clockbase and clock hands
         _spriteBatch.Begin();
-        _spriteBatch.Draw(_clockbase, new Vector2(GraphicsDevice.Viewport.Width / 4f + 40, GraphicsDevice.Viewport.Height / 4f + 50), Color.White);
+        _spriteBatch.Draw(_clockbase, new Vector2(GraphicsDevice.Viewport.Width / 2f, GraphicsDevice.Viewport.Height / 2f), Color.White);
         _spriteBatch.End();
         
         _minutehand.Display(_spriteBatch);

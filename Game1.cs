@@ -10,7 +10,8 @@ public class Game1 : Game
     private SpriteBatch _spriteBatch;
     private ClockHand _minutehand;
     private ClockHand _hourhand;
-    
+
+    private Texture2D _clockbase;
     //Dharma
     private CelestialBackground _earthSky;
     private CelestialBackground _mysticSky;
@@ -47,6 +48,7 @@ public class Game1 : Game
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
+        _clockbase = Content.Load<Texture2D>("clockbase");
         Texture2D texture = Content.Load<Texture2D>("clockhand");
         _minutehand = new ClockHand(texture,
             0f,
@@ -55,7 +57,7 @@ public class Game1 : Game
             MathHelper.TwoPi / 60f,
             new Vector2(_graphics.PreferredBackBufferWidth / 2f,
                 _graphics.PreferredBackBufferHeight / 2f), // Hardcoded for now, change to clock center
-            0.15f);
+            0.07f);
         _hourhand = new ClockHand(texture,
             0f,
             new Vector2(texture.Width/2,
@@ -63,17 +65,17 @@ public class Game1 : Game
             _minutehand.Dtheta / 12f,
             new Vector2(_graphics.PreferredBackBufferWidth / 2f,
                 _graphics.PreferredBackBufferHeight / 2f), // Again, should align with clock bg
-            0.09f);
+            0.05f);
         
         //Dharma
         Texture2D sun = Content.Load<Texture2D>("sun");
         Texture2D moon = Content.Load<Texture2D>("moon");
-        Texture2D star = Content.Load<Texture2D>("stars"); 
-        Texture2D cloud = Content.Load<Texture2D>("clouds");
+        Texture2D star = Content.Load<Texture2D>("star_new"); 
+        Texture2D cloud = Content.Load<Texture2D>("clouds_new");
 
-        _earthSky = new CelestialBackground(sun, moon, 1.0f, Color.White, 0.5f);
+        _earthSky = new CelestialBackground(sun, moon, 0.3f, Color.White, 0.5f);
 
-        _mysticSky = new CelestialBackground(star, cloud, 0.6f, Color.LightBlue, 1.2f);
+        _mysticSky = new CelestialBackground(star, cloud, 0.4f, Color.LightBlue, 1.2f);
 
         // Xinlin
         ///////////////////// CLOCK CENTER/ CLOCK MATRIX ///////////////////////////////////////////////////////
@@ -87,8 +89,22 @@ public class Game1 : Game
         bird = Content.Load<Texture2D>("bird");
         
         // construct the pendulumns, change scale etc as needed
-        foxClock = new Pendulum(fox, stick, Vector2.Zero, 1.0f, 1.3f, 2, 1.0f, 0.5f);
-        birdClock = new Pendulum(bird, stick, Vector2.Zero, 1.0f, 1.0f, 2, 1.5f, 0);
+        foxClock = new Pendulum(fox,
+            stick,
+            new Vector2(GraphicsDevice.Viewport.Width / 6f - 200, GraphicsDevice.Viewport.Height / 4f),
+            1.0f,
+            1.3f,
+            2,
+            1.0f,
+            0.5f);
+        birdClock = new Pendulum(bird,
+            stick,
+            new Vector2(GraphicsDevice.Viewport.Width / 6f - 200, GraphicsDevice.Viewport.Height / 4f),
+            1.0f,
+            1.0f,
+            2,
+            1.5f,
+            0);
     }
 
     protected override void Update(GameTime gameTime)
@@ -117,15 +133,21 @@ public class Game1 : Game
         GraphicsDevice.Clear(Color.CornflowerBlue);
 
         // TODO: Add your drawing code here
-        _minutehand.Display(_spriteBatch);
-        _hourhand.Display(_spriteBatch);
-        
         //Dharma
         float centerX = GraphicsDevice.Viewport.Width / 2f;
         Vector2 center = new Vector2(centerX, 200);
         _earthSky.Draw(_spriteBatch, center);
         Vector2 offsetPosition = center + new Vector2(-200, -100);
         _mysticSky.Draw(_spriteBatch, offsetPosition);
+        
+        //Clockbase and clock hands
+        _spriteBatch.Begin();
+        _spriteBatch.Draw(_clockbase, new Vector2(GraphicsDevice.Viewport.Width / 4f + 40, GraphicsDevice.Viewport.Height / 4f + 50), Color.White);
+        _spriteBatch.End();
+        
+        _minutehand.Display(_spriteBatch);
+        _hourhand.Display(_spriteBatch);
+        
 
         //Xinlin
         foxClock.Display(_spriteBatch, clockFaceMatrix);

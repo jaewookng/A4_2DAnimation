@@ -49,7 +49,7 @@
 /processorParam:TextureFormat=Color
 /build:clockhand.png
 
-#begin clouds.jpg
+#begin clouds_new.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -59,7 +59,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:clouds.jpg
+/build:clouds_new.png
 
 #begin fox.png
 /importer:TextureImporter
@@ -97,7 +97,7 @@
 /processorParam:TextureFormat=Color
 /build:pendulumstick.png
 
-#begin stars.png
+#begin star_new.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -107,19 +107,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:stars.png
-
-#begin sun.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:sun.png
+/build:star_new.png
 
 #begin sun.png
 /importer:TextureImporter

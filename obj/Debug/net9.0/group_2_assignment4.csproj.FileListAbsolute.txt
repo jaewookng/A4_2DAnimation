@@ -41,3 +41,5 @@
 /Users/jaewookang/RiderProjects/group_2_assignment4/bin/Debug/net9.0/Content/moon.xnb
 /Users/jaewookang/RiderProjects/group_2_assignment4/bin/Debug/net9.0/Content/stars.xnb
 /Users/jaewookang/RiderProjects/group_2_assignment4/bin/Debug/net9.0/Content/sun.xnb
+/Users/jaewookang/RiderProjects/group_2_assignment4/bin/Debug/net9.0/Content/clouds_new.xnb
+/Users/jaewookang/RiderProjects/group_2_assignment4/bin/Debug/net9.0/Content/star_new.xnb

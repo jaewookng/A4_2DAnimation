@@ -11,9 +11,15 @@ public class Game1 : Game
     private ClockHand _minutehand;
     private ClockHand _hourhand;
 
+    private CelestialBackground _earthSky;
+    private CelestialBackground _mysticSky;
     public Game1()
     {
         _graphics = new GraphicsDeviceManager(this);
+        _graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
+        _graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
+        _graphics.IsFullScreen = true;
+        _graphics.ApplyChanges();
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
     }
@@ -21,7 +27,7 @@ public class Game1 : Game
     protected override void Initialize()
     {
         // TODO: Add your initialization logic here
-
+        
         base.Initialize();
     }
 
@@ -45,6 +51,15 @@ public class Game1 : Game
             new Vector2(_graphics.PreferredBackBufferWidth / 2f,
                 _graphics.PreferredBackBufferHeight / 2f), // Again, should align with clock bg
             0.09f);
+        
+        Texture2D sun = Content.Load<Texture2D>("sun");
+        Texture2D moon = Content.Load<Texture2D>("moon");
+        Texture2D star = Content.Load<Texture2D>("stars"); 
+        Texture2D cloud = Content.Load<Texture2D>("clouds");
+
+        _earthSky = new CelestialBackground(sun, moon, 1.0f, Color.White, 0.5f);
+
+        _mysticSky = new CelestialBackground(star, cloud, 0.6f, Color.LightBlue, 1.2f);
 
         // TODO: use this.Content to load your game content here
     }
@@ -58,6 +73,9 @@ public class Game1 : Game
         // TODO: Add your update logic here
         _minutehand.Move(gameTime);
         _hourhand.Move(gameTime);
+        
+        _earthSky.Update(gameTime);
+        _mysticSky.Update(gameTime);
 
         base.Update(gameTime);
     }
@@ -70,6 +88,12 @@ public class Game1 : Game
         _minutehand.Display(_spriteBatch);
         _hourhand.Display(_spriteBatch);
 
+        float centerX = GraphicsDevice.Viewport.Width / 2f;
+        Vector2 center = new Vector2(centerX, 200);
+        _earthSky.Draw(_spriteBatch, center);
+        Vector2 offsetPosition = center + new Vector2(-200, -100);
+        _mysticSky.Draw(_spriteBatch, offsetPosition);
+        
         base.Draw(gameTime);
     }
 }

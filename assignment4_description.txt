@@ -1,16 +1,25 @@
 intended animation:
 A cuckoo clock with moving minute and hour hands, whose movements are proportional (minute:hour) but not synced to real time; two pendulums swinging at the bottom of the clock with a fox and bird, their swing periods slightly offset, adn the fox and bird tilt up and down continuously while they swing; a revolving sun and moon animation.
 
-xinlin-
+Result:
+We ran into the issue of not being able to properly sync the timing as well as getting the location of all objects to where we had envisioned. Otherwise the animations of the objects were as planned in the progress report for the exception of the celestial bodies class which we decided to create two revolving object sets rather than one.
+
+Xinlin-
 drew assets for the clock face/base, pendulum sticks, pendulum animals.
 created Pendulum() class with constructor that allowed specification of pendulum position, pendulum stick size, pendulum animal size, swing speed, max swing angle, offset of swing phase so they're not both moving visually in sync.
 Pendulum() class has an Update method to update the pendulum swing angle each frame (I used sine from friday to calculate the angle so I didn't have to manually make it oscillate at specific points and make the animation smoother), and to animate the pendulum animals so they rock up and down while swinging attached to the pendulum sticks.
 Pendulum() class has Display method that takes the matrix for the clock face as the pivot point everything is attached to (the parent). draws the sticks of the pendulums and draws the attached animals inheriting the swinging of the pendulums.
 
-dharma- 
+Dharma- 
 The assets for the sun, moon, and stars, along with the cloud assets, were created to function as celestial elements which will appear in the mechanical clock background.
 The system's position and scale factor and atmosphere color tint and orbit speed parameters, which the constructor of the CelestialBackground() class allows users to specify, enable users to distinguish between day and night cycles. The Update method of the CelestialBackground() class updates the timer by using the elapsed time together with orbit speed to determine the non-linear movement of celestial bodies. 
 I used a sine and cosine function to handle the orbital calculations so I didn't have to manually update positions, which allowed the sun and moon, along with the stars and clouds, to move in a smooth, continuous circular path. 
 The Draw method of the CelestialBackground() class enables screen position input to create a root Matrix, which uses scale and translation to define the parent coordinate system that structures the entire system. 
 The system draws two celestial assets by using the parent matrix as a reference point, while the second asset maintains a distance of pi from the first asset to ensure they stay on opposite sides of the orbit path, which enables the children to receive the transformation and positioning of the complete system. 
 The star and cloud set is tinted purple and moves non linear in a smaller radius than the sun and moon, as well rotates at a different rate.
+
+Jaewoo-
+I created the clock hand asset which I designed to function as the minute and hour indicators in our cuckoo clock animation. I developed the ClockHand() class with a versatile constructor that allows me to specify the texture, starting angle, needle origin, rotational velocity, pivot point, and scale for each instance. I designed a Move method which modifies the hand's angle according to game time progress because I wanted to achieve proportional movement for the minute and hour hands at a 12:1 ratio without using actual time measurements. I created a private MakeTick method which builds a transformation matrix through rotation and translation multiplicationto achieve the hierarchical positioning requirements. I pass this matrix into the Display method’s spriteBatch.Begin call as the transformMatrix. This process ensures that the hands rotate correctly around the clock's center while inheriting the proper positioning from the parent pivot.
+
+
+

@@ -4,9 +4,25 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+    <File>/Users/jaewookang/RiderProjects/group_2_assignment4/Content/bird.png</File>
+    <File>/Users/jaewookang/RiderProjects/group_2_assignment4/Content/clockbase.png</File>
     <File>/Users/jaewookang/RiderProjects/group_2_assignment4/Content/clockhand.png</File>
+    <File>/Users/jaewookang/RiderProjects/group_2_assignment4/Content/clouds.jpg</File>
+    <File>/Users/jaewookang/RiderProjects/group_2_assignment4/Content/fox.png</File>
+    <File>/Users/jaewookang/RiderProjects/group_2_assignment4/Content/moon.png</File>
+    <File>/Users/jaewookang/RiderProjects/group_2_assignment4/Content/pendulumstick.png</File>
+    <File>/Users/jaewookang/RiderProjects/group_2_assignment4/Content/stars.png</File>
+    <File>/Users/jaewookang/RiderProjects/group_2_assignment4/Content/sun.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>

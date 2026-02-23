@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>/Users/jaewookang/RiderProjects/group_2_assignment4/Content/clockhand.png</SourceFile>
-  <SourceTime>2026-02-22T21:09:26.5874801-06:00</SourceTime>
-  <DestFile>/Users/jaewookang/RiderProjects/group_2_assignment4/Content/bin/DesktopGL/Content/clockhand.xnb</DestFile>
-  <DestTime>2026-02-22T21:19:06.5231502-06:00</DestTime>
+  <SourceFile>/Users/jaewookang/RiderProjects/group_2_assignment4/Content/moon.png</SourceFile>
+  <SourceTime>2026-02-22T21:10:30.500105-06:00</SourceTime>
+  <DestFile>/Users/jaewookang/RiderProjects/group_2_assignment4/Content/bin/DesktopGL/Content/moon.xnb</DestFile>
+  <DestTime>2026-02-22T21:20:36.2553455-06:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2025-10-20T09:25:32-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

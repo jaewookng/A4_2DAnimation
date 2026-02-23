@@ -1,0 +1,8 @@
+intended animation:
+A cuckoo clock with moving minute and hour hands, whose movements are proportional (minute:hour) but not synced to real time; two pendulums swinging at the bottom of the clock with a fox and bird, their swing periods slightly offset, adn the fox and bird tilt up and down continuously while they swing; a revolving sun and moon animation.
+
+xinlin-
+drew assets for the clock face/base, pendulum sticks, pendulum animals.
+created Pendulum() class with constructor that allowed specification of pendulum position, pendulum stick size, pendulum animal size, swing speed, max swing angle, offset of swing phase so they're not both moving visually in sync.
+Pendulum() class has an Update method to update the pendulum swing angle each frame (I used sine from friday to calculate the angle so I didn't have to manually make it oscillate at specific points and make the animation smoother), and to animate the pendulum animals so they rock up and down while swinging attached to the pendulum sticks.
+Pendulum() class has Display method that takes the matrix for the clock face as the pivot point everything is attached to (the parent). draws the sticks of the pendulums and draws the attached animals inheriting the swinging of the pendulums.

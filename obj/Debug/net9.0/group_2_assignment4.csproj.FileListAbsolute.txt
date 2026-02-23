@@ -33,3 +33,11 @@
 /Users/jaewookang/RiderProjects/group_2_assignment4/obj/Debug/net9.0/group_2_assignment4.pdb
 /Users/jaewookang/RiderProjects/group_2_assignment4/obj/Debug/net9.0/group_2_assignment4.genruntimeconfig.cache
 /Users/jaewookang/RiderProjects/group_2_assignment4/obj/Debug/net9.0/ref/group_2_assignment4.dll
+/Users/jaewookang/RiderProjects/group_2_assignment4/bin/Debug/net9.0/Content/bird.xnb
+/Users/jaewookang/RiderProjects/group_2_assignment4/bin/Debug/net9.0/Content/clockbase.xnb
+/Users/jaewookang/RiderProjects/group_2_assignment4/bin/Debug/net9.0/Content/fox.xnb
+/Users/jaewookang/RiderProjects/group_2_assignment4/bin/Debug/net9.0/Content/pendulumstick.xnb
+/Users/jaewookang/RiderProjects/group_2_assignment4/bin/Debug/net9.0/Content/clouds.xnb
+/Users/jaewookang/RiderProjects/group_2_assignment4/bin/Debug/net9.0/Content/moon.xnb
+/Users/jaewookang/RiderProjects/group_2_assignment4/bin/Debug/net9.0/Content/stars.xnb
+/Users/jaewookang/RiderProjects/group_2_assignment4/bin/Debug/net9.0/Content/sun.xnb
